@@ -156,11 +156,12 @@
 
    /* Hero Section */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('imagens/imagemBanner.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: auto;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -685,6 +686,10 @@
       .mobile-toggle {
         display: block;
       }
+
+      section {
+        padding: 4rem 1rem; /* Menos espaço no mobile */
+      }
       
       .nav-links {
         position: fixed;
@@ -739,6 +744,10 @@
         transform: none;
         top: 0;
         left: 0;
+      }
+
+      .section-header {
+        margin-bottom: 1.5rem;
       }
     
       .sobre-texto {
@@ -983,5 +992,15 @@
       <p>&copy; 2025 Centro de Sabedoria Xamânica. Todos os direitos reservados.</p>
     </div>
   </footer>
+  <script>
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+  
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+ </body> 
   
   
