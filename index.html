@@ -147,12 +147,21 @@
       width: 100%;
     }
 
-    .mobile-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: var(--azul-profundo);
+    /* ícone do menu hamburguer */
+    .mobile-toggle i {
+      font-size: 2rem;
+      transition: transform 0.3s ease;
     }
+
+  /* Quando o menu está aberto, o ícone do hambúrguer (☰) muda para "X" */
+  .mobile-toggle.open i {
+    transform: rotate(90deg); /* Rotaciona para 'X' */
+  }
+
+  /* Caso queira o "X" mais visível, você pode usar o ícone "fa-times" do Font Awesome */
+  .mobile-toggle.open i::before {
+    content: '\f00d';  /* Isso faz o ícone mudar para 'fa-times' */
+  }
 
    /* Hero Section */
 .hero {
@@ -713,6 +722,11 @@
         visibility: visible;
       }
       
+      .hero {
+        padding-bottom: 0 !important; /* Remove o padding extra do final do banner */
+        margin-bottom: 0 !important; /* Remove qualquer margem extra */
+      }
+      
       .hero-inner h1 {
         font-size: 2.4rem;
       }
@@ -727,6 +741,13 @@
       
       h2 {
         font-size: 1.8rem;
+      }
+
+      .sobre-section {
+        padding-top: 0 !important; /* Ajusta o topo da seção 'sobre' */
+        padding-bottom: 0 !important; /* Remove o espaço extra no final */
+        margin-top: 0 !important; /* Remove margem superior */
+        margin-bottom: 0 !important; /* Remove margem inferior */
       }
       
       .sobre-container {
@@ -746,6 +767,13 @@
         left: 0;
       }
 
+      .servicos-section {
+        padding-top: 0 !important; /* Ajusta o topo da seção 'servicos' */
+        padding-bottom: 0 !important; /* Remove o espaço extra no final */
+        margin-top: 0 !important; /* Remove margem superior */
+        margin-bottom: 0 !important; /* Remove margem inferior */
+      }
+
       .section-header {
         margin-bottom: 1.5rem;
       }
@@ -761,6 +789,11 @@
     
       .sobre-texto p {
         font-size: 1rem;
+      }
+
+      .container {
+        padding: 0 !important;
+        margin: 0 !important;
       }
 
       .testimonial-card {
@@ -995,9 +1028,20 @@
   <script>
     const mobileToggle = document.getElementById('mobile-toggle');
     const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('#nav-links a');
   
+    // Abre ou fecha o menu e alterna o ícone do botão (hamburguer para "X")
     mobileToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      mobileToggle.classList.toggle('open'); // Muda o ícone para "X"
+    });
+  
+    // Fecha o menu ao clicar em qualquer item de navegação
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('open'); // Volta para "☰" quando o menu fecha
+      });
     });
   </script>
 
