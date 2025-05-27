@@ -1,1 +1,1 @@
-#Site para religiozidade.
+#Site para religiozidade
