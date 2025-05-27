@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Centro de Sabedoria Xamânica - Práticas ancestrais para seu desenvolvimento espiritual" />
-  <title>Centro de Sabedoria Xamânica | Jornada Espiritual</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Expression of Oneness - Healing and awakening through Shamanism, Ancestral wisdom, and Spirituality." />
+  <title>Expression of Oneness | Your Journey</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Cormorant+Garamond:wght@400;700&display=swap"
+    rel="stylesheet">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
   <style>
+    /* ============================================== */
+    /* PASSO 1: FUNDAÇÃO (CORES, FONTES, RESET)       */
+    /* ============================================== */
     :root {
-      --azul-profundo: #1a3c4d;
-      --azul-claro: #e6f4f1;
-      --azul-medio: #88c6d6;
-      --verde-suave: #c4d7b2;
-      --terra: #a67c52;
-      --branco: #ffffff;
-      --texto-escuro: #2c3e50;
-      --texto-claro: #f5f5f5;
-      --gradiente-header: linear-gradient(135deg, rgba(26, 60, 77, 0.95) 0%, rgba(42, 82, 100, 0.9) 100%);
-      --sombra-suave: 0 8px 30px rgba(0, 0, 0, 0.1);
-      --transicao: all 0.4s ease;
+      --bg-light-teal: #EAF3F2;
+      /* Cor de fundo principal */
+      --bg-dark-footer: #2A4442;
+      /* Cor do rodapé */
+      --text-primary: #3E5B59;
+      /* Cor do texto principal */
+      --text-light: #F0F0F0;
+      /* Cor do texto claro (no rodapé) */
+      --btn-color: #75AFAF;
+      /* Cor principal dos botões */
+      --btn-color-hover: #4a8a7e;
+      /* Cor do botão ao passar o mouse */
+      --accent-orange: #D4A373;
+      /* Cor da ilustração "Our Essence" */
+
+      /* Efeito Vidro (Glassmorphism) */
+      --glass-bg: rgba(255, 255, 255, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.4);
+
+      /* Fontes */
+      --font-body: 'Montserrat', sans-serif;
+      --font-heading: 'Cormorant Garamond', serif;
     }
 
     * {
@@ -30,53 +51,98 @@
       box-sizing: border-box;
     }
 
+    html,
     body {
-      background-color: var(--branco);
-      color: var(--texto-escuro);
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.8;
-      font-weight: 400;
+      font-family: var(--font-body);
+      background-color: #E2F0EF;
+      color: var(--text-primary);
+      text-align: center;
       overflow-x: hidden;
+      /* Evita scroll horizontal */
+      width: 100%;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Merriweather', serif;
-      line-height: 1.4;
+    body {
+      font-family: var(--font-body);
+      background-color: #E2F0EF;
+      color: var(--text-primary);
+      text-align: center;
+      overflow-x: hidden;
+      width: 100%;
+      /* Remove '100vw' */
     }
 
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2:after {
-      content: '';
-      position: absolute;
-      width: 60%;
-      height: 3px;
-      background: var(--azul-medio);
-      bottom: -10px;
-      left: 20%;
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
     }
 
     p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto 1rem auto;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 80px 20px;
+    }
+
+    /* ============================================== */
+    /* PASSO 2: COMPONENTES REUTILIZÁVEIS             */
+    /* ============================================== */
+    .btn {
+      background-color: var(--btn-color);
+      color: white;
+      padding: 25px 30px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--btn-color-hover);
+    }
+
+    .btn-secondary {
+      background-color: #75AFAF;
+      color: #FFFFFF;
+      padding: 10px 25px;
+      border-radius: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--text-primary);
+      color: white;
+    }
+
+    /* Classe para o efeito de vidro */
+    .glass-effect {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      /* Compatibilidade Safari */
     }
 
     /* Navegação */
     .nav-spiritual {
-      background:#3AB6B64D;
+      background: #3AB6B64D;
       backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
       position: fixed;
       width: 100%;
       top: 0;
@@ -153,898 +219,912 @@
       transition: transform 0.3s ease;
     }
 
-  /* Quando o menu está aberto, o ícone do hambúrguer (☰) muda para "X" */
-  .mobile-toggle.open i {
-    transform: rotate(90deg); /* Rotaciona para 'X' */
-  }
-
-  /* Caso queira o "X" mais visível, você pode usar o ícone "fa-times" do Font Awesome */
-  .mobile-toggle.open i::before {
-    content: '\f00d';  /* Isso faz o ícone mudar para 'fa-times' */
-  }
-
-   /* Hero Section */
-.hero {
-  min-height: 100vh;
-  background-image: url('imagens/imagemBanner.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  padding-bottom: 40px; 
-  color: #2c3e50;
-}
-
-.hero::before {
-  content: '';
-  display: none;
-}
-
-
-.hero-inner {
-  max-width: 800px;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  padding: 0 1rem;
-}
-
-.hero-inner h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  animation: fadeInDown 1.5s ease;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  color: #2c3e50; /* Preto */
-  text-shadow: none; /* Sem sombra */
-}
-
-.hero-inner h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 400;
-  animation: fadeInUp 1.5s ease;
-  color: #2c3e50; /* Preto */
-  text-shadow: none;
-}
-
-.hero-inner h2::after {
-  display: none;
-}
-
-.hero-inner p {
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 0 auto 1cqmin;
-  animation: fadeIn 2s ease;
-  color: #2c3e50; /* Preto */
-  text-shadow: none;
-}
-
-/* Removido .background-illustration e img */
-
-
-    .btn {
-      display: inline-block;
-      padding: 0.85rem 2.2rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: var(--transicao);
-      text-transform: uppercase;
-      font-size: 0.85rem;
+    /* Quando o menu está aberto, o ícone do hambúrguer (☰) muda para "X" */
+    .mobile-toggle.open i {
+      transform: rotate(90deg);
+      /* Rotaciona para 'X' */
     }
 
-    .btn-primary {
-      background: linear-gradient(to right, #ffffff, #555555); /* Botão azul médio (padrão do site) */
-      color: #ffffff; /* Texto do botão branco */
-      border: none;
-      border-radius: 50px;
-      padding: 0.8rem 2rem;
-      font-weight: bold;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      margin-top: 1rem;
-      transition: var(--transicao);
+    /* Caso queira o "X" mais visível, você pode usar o ícone "fa-times" do Font Awesome */
+    .mobile-toggle.open i::before {
+      content: '\f00d';
+      /* Isso faz o ícone mudar para 'fa-times' */
     }
 
-    .btn-primary:hover {
-      background: linear-gradient(to right, #555555, #333333);
-      color: var(--azul-medio);
-      border: 2px solid var(--azul-medio);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
 
-    /* Seções */
-    section {
-      padding: 6rem 0;
-    }
+    /* ============================================== */
+    /* PASSO 3: ESTILOS DAS SEÇÕES ESPECÍFICAS        */
+    /* ============================================== */
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-intro {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    /* Sobre nós */
-    .sobre-section {
-      background: url('imagens/quemSomos.png') left center no-repeat;
-      padding: 8rem 0;
-      position: relative;
-    }
-    
-    .sobre-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: flex-end; /* empurra o texto pro lado direito */
-      align-items: center;
-      padding: 0 2rem;
-      min-height: 500px;
-      position: relative;
-    }
-    
-    .sobre-section::before {
-      content: '';
+    /* --- Seção Hero (Topo) --- */
+    .hero-section::after {
+      content: "";
       position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background-image: url('quemSomos.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left center;
-      width: 50%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-    
-    .sobre-texto {
-      max-width: 600px;
-      z-index: 1;
-      text-align: left;
-    }
-    
-    .sobre-texto h2 {
-      font-size: 2.5rem;
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
-      font-family: 'Merriweather', serif;
-    }
-    
-    .sobre-texto p {
-      font-size: 1.1rem;
-      color: #2c3e50;
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-    }
-      
-    /* Serviços */
-    .servicos-section {
-      background-color: var(--azul-claro);
-      padding: 8rem 2rem;
-      text-align: center;
-    }
-    
-    .section-header h2 {
-      font-size: 3rem;
-      font-family: 'Merriweather', serif;
-      color: #2c3e50;
-      margin-bottom: 1rem;
-    }
-    
-    .section-header .subtitulo {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 4rem;
-      color: #2c3e50;
-    }
-    
-    .cards-servicos {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .card-servico {
-      background: #d4eee8;
-      border-radius: 20px;
-      padding: 2rem;
+      bottom: -44%;
+      transform: translateX(-50%);
       width: 100%;
-      max-width: 340px;
-      box-shadow: var(--sombra-suave);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      min-width: 1200px;
+      /* Largura mínima para telas grandes */
+      height: 80%;
+      background-image: url("assets/images/ellipse.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: bottom;
+      z-index: 1;
+    }
+
+
+
+
+    .hero-section {
+      padding-top: 0px;
+      height: 90vh;
+      width: 100%;
+
+      background-image: url("assets/images/imagemBanner.png");
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
       position: relative;
     }
-    
-    .card-servico h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #2c3e50;
-    }
-    
-    .card-servico p {
-      font-size: 0.95rem;
-      color: #2c3e50;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-    
-    .icone-servico {
-      width: 50px;
-      height: 50px;
-      margin: 0 auto 1.5rem;
-    }
-    
-    .btn-servico {
-      display: inline-block;
-      background: linear-gradient(to right, #a0dcd1, #3b5d53);
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    
-    .btn-servico:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-    
 
-    /* Depoimentos */
-    .testimonials {
-      background-color: var(--azul-claro);
-      padding: 8rem 2rem;
-      text-align: center;
-    }
-    
-    .section-header h2 {
-      font-size: 3rem;
-      font-family: 'Merriweather', serif;
-      color: #2c3e50;
-      margin-bottom: 1rem;
-    }
-    
-    .section-header .subtitulo {
-      font-size: 1.1rem;
-      color: #2c3e50;
-      max-width: 700px;
-      margin: 0 auto 4rem;
-    }
-    
-    .testimonial-lista {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      align-items: center;
-    }
-    
-    .testimonial-card {
-      background-color: #e3f4ed;
-      padding: 2.5rem;
-      max-width: 700px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      text-align: center;
-    }
-    
-    .testimonial-texto {
-      font-size: 1.1rem;
-      font-style: italic;
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-    
-    .testimonial-autor {
-      font-weight: 600;
-      color: #2c3e50;
-    }
-    
-    /* Contato */
-    .contact-section {
-      background-color: var(--azul-claro);
-      padding: 8rem 2rem;
-    }
-    
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 3rem;
-    }
-    
-    .contact-info {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    .contact-info h2 {
-      font-size: 2.5rem;
-      font-family: 'Merriweather', serif;
-      margin-bottom: 1.5rem;
-      color: #2c3e50;
-      border-bottom: 4px solid #e8cad9;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-    
-    .contact-info p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #2c3e50;
-      margin-bottom: 2rem;
-    }
-    
-    .contact-item {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      color: #2c3e50;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-    
-    .contact-item i {
-      font-size: 1.2rem;
-      color: #2c3e50;
-    }
-    
-    .social-links {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-    }
-    
-    .social-links a {
-      font-size: 1.3rem;
-      color: #2c3e50;
-      transition: 0.3s;
-    }
-    
-    .social-links a:hover {
-      color: var(--azul-medio);
-    }
-    
-    .contact-form-container {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    .contact-form {
-      background-color: #678a7f;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .contact-form label {
-      color: #ffffff;
-      font-weight: 500;
-    }
-    
-    .contact-form input,
-    .contact-form select {
-      padding: 0.8rem;
-      border: none;
-      border-radius: 20px;
-      font-size: 1rem;
-      font-family: inherit;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    
-    .contact-form select {
-      appearance: none;
-    }
-    
-    .btn-submit {
-      margin-top: 1rem;
-      padding: 0.9rem 2rem;
-      background: linear-gradient(to right, #a0dcd1, #3b5d53);
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-submit:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    
 
-    /* Footer */
-    .footer {
-      background-color: #3b5d53;
-      color: #ffffff;
-      padding: 4rem 2rem 2rem;
-      font-family: 'Montserrat', sans-serif;
+
+    .hero-section h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
     }
-    
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
+
+    .hero-box {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: absolute;
+      bottom: -5%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      max-width: 40%;
+      max-height: 240px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      z-index: 2;
     }
-    
-    .footer-coluna {
-      flex: 1;
-      min-width: 250px;
-    }
-    
-    .footer-coluna h3 {
+
+    .hero-box h1 {
       font-family: 'Merriweather', serif;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-    
-    .footer-coluna h4 {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    
-    .footer-coluna p,
-    .footer-coluna a,
-    .footer-bottom p {
-      font-size: 0.95rem;
-      color: #e0e0e0;
-      text-decoration: none;
-      line-height: 1.6;
-    }
-    
-    .footer-coluna a:hover {
-      color: #a0dcd1;
-      text-decoration: underline;
-    }
-    
-    .footer-coluna ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .footer-coluna ul li {
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
-    
-    .footer-social {
-      margin-top: 1rem;
+
+    .hero-box h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .hero-box p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    /* --- Seção "Our Essence" --- */
+    .essence-section {
+      background-color: #E2F0EF;
+      margin-top: 5%;
+    }
+
+    .essence-flex {
       display: flex;
-      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      text-align: left;
     }
-    
-    .footer-social a {
-      color: #ffffff;
-      font-size: 1.2rem;
-      transition: 0.3s ease;
+
+    .essence-illustration img {
+      max-width: 250px;
+      /* Ajuste o tamanho da ilustração */
     }
-    
-    .footer-social a:hover {
-      color: #a0dcd1;
+
+    .essence-text {
+      flex-basis: 60%;
     }
-    
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: 3rem;
-      padding-top: 1.5rem;
+
+    .essence-text h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    /* --- Seção "Our Practices" (Com fundo especial) --- */
+    .practices-section {
+      position: relative;
+      /* Necessário para o fundo abstrato */
+      background: linear-gradient(to top, #c2d6d4 50%, #E2F0EF);
+    }
+
+    /* Fundo com as manchas coloridas */
+
+
+
+    .practices-section::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 100%;
+      min-width: 1200px;
+      /* Largura mínima para telas grandes */
+      height: 70%;
+      background-image: url("assets/images/ellipse2.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: top;
+      z-index: 0;
+    }
+
+    .practices-section .container {
+      position: relative;
+      /* Para ficar na frente do fundo */
+      z-index: 1;
+    }
+
+    .practices-section h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      margin-bottom: 40px;
+    }
+
+    .practices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .practices-grid .card {
       text-align: center;
-    }
-    
-
-    /* Animações */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      background: rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(8px);
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card {
+      width: 300px;
+      /* ou 100%, ou 25rem, etc. */
+      height: auto;
+      /* ou defina uma altura fixa, como 400px */
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 1rem;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card-icon {
+      max-height: 70px;
+      margin-top: 20px;
+      flex: 0 0 auto;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      max-width: 100%;
     }
 
-    /* Responsividade */
+    .card h3 {
+      font-size: 24px;
+      margin-top: 5px;
+    }
+
+    .card p {
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    /* --- Seção "Paranormal Cleansing" --- */
+    .cleansing-section {
+      background-color: #c2d6d4;
+      width: 100%;
+      padding: 30px;
+    }
+
+    .practices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      align-items: stretch;
+      /* Garante que os cards se estiquem para a mesma altura */
+    }
+
+    /* Transforma o card em um container flexível para alinhar o conteúdo interno */
+    .practices-grid .card {
+      display: flex;
+      flex-direction: column;
+      /* Alinha os itens verticalmente: ícone, título, texto, botão */
+    }
+
+    /* A MÁGICA ACONTECE AQUI */
+    .practices-grid .card .btn-secondary {
+      margin-top: auto;
+      /* Cria uma margem automática no topo do botão, empurrando-o para o fundo */
+    }
+
+    .cleansing-section::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-50%);
+      height: 100%;
+      background-image: url("assets/images/ellipse3.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: top;
+      z-index: 1;
+    }
+
+    .cleansing-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .cleansing-section p {
+      text-align: center;
+      padding: 0 50px 0 50px;
+      font-family: cormorant garamond;
+
+    }
+
+    /* --- Seção "What People Say" (Depoimentos) --- */
+    .testimonials-section {
+      background-color: #c2d6d4;
+    }
+
+    .testimonials-section h2 {
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      padding: 20px;
+      font-style: italic;
+      background: rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(8px);
+    }
+
+    .testimonial-card p {
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card span {
+      display: block;
+      margin-top: 15px;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .linha-horizontal {
+      height: 2px;
+      background-color: #6C87B3;
+      width: 95%;
+      margin: 0 auto;
+      bottom: -50px;
+    }
+
+    /*----- Form -----*/
+    .form-section {
+      background: linear-gradient(to top, #3E5441 50%, #c2d6d4);
+      color: var(--text-light);
+      padding: 10px 0 0 0;
+    }
+
+    .form-section-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      text-align: left;
+    }
+
+    .form-section .container {
+      padding: 20px 20px;
+      /* Reduzido para diminuir o espaço final */
+    }
+
+    .contact-info {
+      flex-basis: 50%;
+    }
+
+    .contact-info h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .contact-info li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 24px;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--btn-color);
+    }
+
+    .contact-form-container {
+      flex-basis: 45%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 15px;
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      font-size: 15px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #777;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+    }
+
+
+    /* --- Rodapé (Contato) --- */
+    /* ============================================== */
+    /* ESTILOS PARA O RODAPÉ DE 3 COLUNAS             */
+    /* ============================================== */
+
+    .footer-section {
+      background-color: #2A4442;
+      color: #F0F0F0;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      /* Mantém os 3 itens distribuídos */
+      align-items: center;
+    }
+
+    .footer-logo {
+      max-width: 80px;
+      /* Defina a largura da sua logo */
+      height: auto;
+    }
+
+    .footer-text-content {
+      text-align: center;
+      /* Garante que o texto dentro do bloco fique centralizado */
+    }
+
+    /* IMPORTANTE: O espaçador deve ter a mesma largura da logo para o alinhamento funcionar */
+    .footer-spacer {
+      width: 80px;
+      /* Mesma largura da classe .footer-logo */
+    }
+
+    .footer-text-content .footer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      margin: 0 auto;
+    }
+
+    .footer-text-content .footer-quote {
+      font-style: italic;
+      opacity: 0.8;
+      margin: 5px 0 10px 0;
+    }
+
+    .footer-text-content .footer-copyright p {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+
+    .footer-section {
+      background-color: #2A4442;
+      /* Cor de fundo escura */
+      color: #F0F0F0;
+      padding: 30px 20px;
+      /* Um pouco menos de padding vertical */
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-container {
+      display: flex;
+      /* 1. Ativa o Flexbox para alinhar os itens */
+      justify-content: center;
+      /* 2. Empurra um item para a esquerda e outro para a direita */
+      align-items: center;
+      /* 3. Alinha verticalmente os itens ao centro */
+      gap: 300px;
+      /* Adiciona um espaço entre a logo e o texto */
+    }
+
+    .footer-logo {
+      max-width: 80px;
+      /* Define um tamanho máximo para a logo */
+      height: auto;
+
+    }
+
+    .footer-text-content {
+      text-align: center;
+      /* Alinha todo o texto do bloco à direita */
+      width: 90%;
+    }
+
+    .footer-text-content .footer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .footer-text-content .footer-quote {
+      font-style: italic;
+      opacity: 0.8;
+      margin: 5px 0 10px 0;
+    }
+
+    .footer-text-content .footer-copyright p {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    .footer-section {
+      background: #283b2b;
+      color: var(--text-light);
+      padding: 10px 0 0 0;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      text-align: left;
+    }
+
+    .footer-section .container {
+      padding: 20px 20px;
+      /* Reduzido para diminuir o espaço final */
+    }
+
+    -->
+    /* ============================================== */
+    /* PASSO 4: RESPONSIVIDADE                        */
+    /* ============================================== */
+
+    /* --- Estilos para o Menu Hambúrguer (Inicialmente escondido no desktop) --- */
+    .mobile-toggle {
+      display: none;
+      /* Esconde o ícone de hambúrguer em telas grandes */
+      cursor: pointer;
+    }
+
+    /* --- Ajustes para Tablets e Telas Menores (até 992px) --- */
     @media (max-width: 992px) {
-      .hero-inner h1 {
-        font-size: 2.8rem;
-      }
-      
-      .hero-inner h2 {
-        font-size: 1.4rem;
-      }
-      
-      section {
-        padding: 5rem 0;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .mobile-toggle {
-        display: block;
+      .container {
+        padding: 60px 20px;
+        /* Reduz o espaçamento vertical */
       }
 
-      section {
-        padding: 4rem 1rem; /* Menos espaço no mobile */
+      h1,
+      h2 {
+        font-size: 2.5rem;
+        /* Reduz um pouco o tamanho dos títulos */
       }
-      
+
+      /* Navegação */
       .nav-links {
-        position: fixed;
-        top: 80px;
+        display: none;
+        /* Esconde os links do menu desktop */
+        position: absolute;
+        top: 74px;
+        /* Altura da sua barra de navegação */
         left: 0;
         width: 100%;
         flex-direction: column;
-        background: var(--branco);
-        padding: 1.5rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        gap: 1rem;
-        transform: translateY(-150%);
-        transition: var(--transicao);
-        opacity: 0;
-        visibility: hidden;
+        background-color: #ffffff;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
-      
+
       .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        display: flex;
+        /* Mostra o menu quando estiver ativo */
       }
-      
-      .hero {
-        padding-bottom: 0 !important; /* Remove o padding extra do final do banner */
-        margin-bottom: 0 !important; /* Remove qualquer margem extra */
+
+      .mobile-toggle {
+        display: block;
+        /* Mostra o ícone de hambúrguer */
+        color: var(--text-primary);
       }
-      
-      .hero-inner h1 {
-        font-size: 2.4rem;
+
+      /* Seção Hero */
+      .hero-box {
+        max-width: 60%;
+        /* Aumenta a largura da caixa de texto */
+        padding: 1rem;
       }
-      
-      .hero-inner h2 {
+
+      .hero-box h1 {
         font-size: 1.2rem;
       }
-      
-      .hero-inner p {
-        font-size: 1rem;
+
+      .hero-box h2 {
+        font-size: 0.9rem;
       }
-      
+
+      .hero-box p {
+        font-size: 0.75rem;
+      }
+
+      /* Empilhamento de Colunas */
+      .essence-flex,
+      .footer-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .essence-text h2 {
+        text-align: center;
+      }
+
+      /* Grids */
+      .practices-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        /* Coluna única para os cards */
+        gap: 25px;
+      }
+
+      .card {
+        width: 80%;
+        /* Ajusta a largura do card */
+        margin: 0 auto;
+        /* Centraliza o card */
+      }
+    }
+
+    /* --- Ajustes para Celulares (até 768px) --- */
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 15px;
+        /* Menos espaçamento ainda */
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
       h2 {
         font-size: 1.8rem;
       }
 
-      .sobre-section {
-        padding-top: 0 !important; /* Ajusta o topo da seção 'sobre' */
-        padding-bottom: 0 !important; /* Remove o espaço extra no final */
-        margin-top: 0 !important; /* Remove margem superior */
-        margin-bottom: 0 !important; /* Remove margem inferior */
+      h3 {
+        font-size: 1.5rem;
       }
-      
-      .sobre-container {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding: 2rem;
+
+      /* Seção Hero */
+      .hero-section {
+        height: 70vh;
+        /* Diminui a altura para caber melhor na tela */
       }
-    
-      .sobre-section::before {
-        position: relative;
+
+      .hero-box {
+        max-width: 90%;
+        /* Caixa de texto ocupa quase toda a largura */
+        max-height: none;
+        /* Remove a altura máxima para o texto caber */
+        padding: 1rem;
+        bottom: 5%;
+      }
+
+      .hero-box p {
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        /* Limita o texto a 4 linhas */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .btn {
+        padding: 15px 25px;
+        /* Botões um pouco menores */
+        font-size: 14px;
+      }
+
+      /* Esconde as elipses gigantes para evitar quebra de layout */
+      .hero-section::after,
+      .practices-section::before,
+      .cleansing-section::before {
+        display: none;
+      }
+
+      /* Seção de Limpeza */
+      .cleansing-section p {
+        padding: 0 10px;
+        /* Reduz o espaçamento lateral no texto */
+      }
+
+      .card {
         width: 100%;
-        height: 200px;
-        background-size: contain;
-        transform: none;
-        top: 0;
-        left: 0;
+        /* Card ocupa toda a largura disponível */
       }
 
-      .servicos-section {
-        padding-top: 0 !important; /* Ajusta o topo da seção 'servicos' */
-        padding-bottom: 0 !important; /* Remove o espaço extra no final */
-        margin-top: 0 !important; /* Remove margem superior */
-        margin-bottom: 0 !important; /* Remove margem inferior */
-      }
-
-      .section-header {
-        margin-bottom: 1.5rem;
-      }
-    
-      .sobre-texto {
-        max-width: 100%;
+      /* Rodapé */
+      .footer-flex {
         text-align: center;
-      }
-    
-      .sobre-texto h2 {
-        font-size: 2rem;
-      }
-    
-      .sobre-texto p {
-        font-size: 1rem;
+        /* Garante que tudo no rodapé fique centralizado */
       }
 
-      .container {
-        padding: 0 !important;
-        margin: 0 !important;
+      .social-icons {
+        justify-content: center;
+        display: flex;
       }
 
-      .testimonial-card {
-        padding: 2rem;
+      .footer-text-content {
+        text-align: center;
+        /* Garante que o texto também fique centralizado */
       }
-    
-      .testimonial-texto {
-        font-size: 1rem;
-      }
-    
-      .section-header h2 {
-        font-size: 2.3rem;
-      }
-      
+
       .footer-container {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        /* Empilha os itens verticalmente */
+        gap: 25px;
+        /* Adiciona um espaço entre eles */
       }
-    
-      .footer-social {
-        justify-content: center;
-      }
-      
-    }
-    
 
-    @media (max-width: 576px) {
-      .hero-inner h1 {
-        font-size: 2rem;
+      .footer-spacer {
+        display: none;
+        /* O espaçador não é necessário em telas pequenas */
       }
-      
-      .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.8rem;
-      }
-      
-      section {
-        padding: 4rem 0;
-      }
-      
-      .contact-form {
-        padding: 1.5rem;
-      }
+
     }
   </style>
 </head>
+
 <body>
-  <nav class="nav-spiritual">
-    <div class="nav-container">
-      <div class="nav-brand">
-        <div class="nav-logo">
-          <i class="fas fa-seedling fa-2x" style="color: var(--azul-profundo);"></i>
+  <header>
+    <nav class="nav-spiritual">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <div class="nav-logo">
+            <i class="fas fa-seedling fa-2x" style="color: var(--azul-profundo);"></i>
+          </div>
+          <div class="nav-title">Centro de Sabedoria Xamânica</div>
         </div>
-        <div class="nav-title">Centro de Sabedoria Xamânica</div>
-      </div>
-      
-      <div class="mobile-toggle" id="mobile-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-      
-      <div class="nav-links" id="nav-links">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Quem Somos</a>
-        <a href="#servicos">Práticas</a>
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#contato">Contato</a>
-      </div>
-    </div>
-  </nav>
 
-  <section class="hero" id="inicio">
-    
-    <div class="hero-inner">
-      <h1>Desperte seu Eu Sagrado</h1>
-      <h2>Jornada de Transformação e Sabedoria Ancestral</h2>
-      <p>Conecte-se com a essência da natureza e redescubra seu propósito através das práticas xamânicas milenares. Um espaço de paz, cura e reconexão com sua verdadeira essência.</p>
-      <a href="#contato" class="btn btn-primary">Inicie Sua Jornada</a>
-    </div>
-  </section>
+        <div class="mobile-toggle" id="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
 
-  <section class="sobre-section" id="sobre">
-    <div class="sobre-container">
-      <div class="sobre-texto">
-        <h2>Nossa Essência</h2>
-        <p>Buscamos reconectar o ser humano com sua essência sagrada e as sabedorias ancestrais que habitam em cada um de nós. Nosso trabalho xamânico está fundamentado no respeito profundo às tradições indígenas e seus conhecimentos transmitidos por gerações.</p>
-        <p></p>Através de rituais, plantas sagradas e práticas meditativas, proporcionamos um caminho para que você possa despertar sua intuição natural, purificar seu campo energético e desenvolver uma conexão mais profunda com a Mãe Terra e todos os seres que nela habitam.</p>
-        <p>Nossa missão é criar um espaço seguro de acolhimento espiritual, onde cada pessoa possa explorar seu universo interior e encontrar cura para as feridas da alma, permitindo que a luz da consciência floresça em plenitude.</p>
+        <div class="nav-links" id="nav-links">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Quem Somos</a>
+          <a href="#servicos">Práticas</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#contato">Contato</a>
+        </div>
       </div>
+    </nav>
+
+  </header>
+
+  <section class="hero-section" id="inicio">
+    <div class="hero-box glass-effect">
+      <h1>From Crisis to Clarity</h1>
+      <h2>Stories of spiritual reconstruction and renewal</h2>
+      <p>
+        Guided exercises for rebuilding trust and hope.<br>
+        Embracing change as a spiritual opportunity.<br>
+        How self-awareness and healing contribute to healthier relationships.<br>
+        Reclaiming your inner peace to positively influence your loved ones.<br>
+        Practices for personal and collective growth.
+      </p>
+      <a href="#contact" class="btn">Start your Journey</a>
     </div>
   </section>
 
-  <section id="servicos" class="servicos-section">
+  <section class="essence-section" id="sobre">
+    <div class="container essence-flex">
+      <div class="essence-illustration">
+        <img src="assets/images/buda.png" alt="Illustration of meditation">
+      </div>
+      <div class="essence-text">
+        <h2>Our Essence</h2>
+        <p><strong>Healing and awakening through Shamanism, Ancestral wisdom, and Spirituality.</strong></p>
+        <p>At Expression of Oneness, we believe that the path to well-being and self-discovery is woven from the
+          threads of ancient wisdom and spiritual practices. Our mission is to guide you on a transformative
+          journey of healing and awakening, helping you to connect with your inner essence and the profound
+          wisdom of your ancestors.</p>
+      </div>
+    </div>
+    <div class="linha-horizontal"></div>
+  </section>
+
+  <section class="practices-section" id="servicos">
     <div class="container">
-      <div class="section-header">
-        <h2>Nossas Práticas</h2>
-        <p class="subtitulo">Oferecemos diversas práticas baseadas na sabedoria ancestral para auxiliar em seu caminho de autoconhecimento e evolução espiritual</p>
-      </div>
-  
-      <div class="cards-servicos">
-        <div class="card-servico">
-          <h3>Cerimônias com Plantas Sagradas</h3>
-          <p>Experiências profundas de conexão espiritual guiadas pela sabedoria ancestral e intuição xamânica, respeitando os rituais tradicionais e proporcionando um ambiente seguro e acolhedor.</p>
-          <img src="imagens/galho.png" alt="Ícone planta" class="icone-servico">
-          <a href="#contato" class="btn-servico">Saiba Mais</a>
+      <h2>Our Practices</h2>
+      <p class="section-subtitle">We offer a variety of services designed to support your spiritual, emotional,
+        and energetic well-being.</p>
+
+      <div class="practices-grid">
+        <div class="card glass-effect">
+          <h3> Sacred Plant Ceremony </h3>
+          <img src="assets/images/galho.png" alt="Sacred Plant Icon" class="card-icon">
+          <p>Is a sacred ritual that uses psychoactive plants to promote deep spiritual healing and
+            introspection. We create a safe and supportive environment for this transformative experience...
+          </p>
+          <a href="#" class="btn-secondary">Learn More</a>
         </div>
-  
-        <div class="card-servico">
-          <h3>Despertar da Kundalini</h3>
-          <p>Processo de ativação da energia primordial através de técnicas milenares que promovem a expansão da consciência e o alinhamento dos chakras, resultando em transformação pessoal profunda.</p>
-          <img src="imagens/pena.png" alt="Ícone pena" class="icone-servico">
-          <a href="#contato" class="btn-servico">Saiba Mais</a>
+        <div class="card glass-effect">
+          <h3>Kambo Awakening </h3>
+          <img src="assets/images/pena.png" alt="Kambo Icon" class="card-icon">
+          <p>Is a powerful and transformative healing ritual that uses the secretion of the Kambo frog. This
+            ancestral medicine is known for its potent detoxifying and immune-boosting properties...</p>
+          <a href="#" class="btn-secondary">Learn More</a>
         </div>
-  
-        <div class="card-servico">
-          <h3>Temazcal - Cabana do Suor</h3>
-          <p>Ritual de purificação física e espiritual que representa o útero da Mãe Terra, promovendo cura, renovação e conexão profunda com os quatro elementos da natureza.</p>
-          <img src="imagens/estrela.png" alt="Ícone estrela" class="icone-servico">
-          <a href="#contato" class="btn-servico">Saiba Mais</a>
+        <div class="card glass-effect">
+          <h3>Personal Spiritual</h3>
+          <img src="assets/images/estrela.png" alt="Spa Icon" class="card-icon">
+          <p>Our retreats are designed to help you disconnect from the hustle and bustle of daily life and
+            reconnect with your inner self.
+            A sanctuary for healing, growth, and rejuvenation.</p>
+          <a href="#" class="btn-secondary">Learn More</a>
         </div>
       </div>
     </div>
   </section>
-  
 
+  <section class="cleansing-section">
+    <h2>Paranormal House Cleansing & Energy Clearing</h2>
+    <p>Are you experiencing unexplained noises, shadows, or feelings of unease in your home?
+      I offer compassionate and professional paranormal house cleansing services designed to restore peace,
+      balance, and harmony to your living space. Using spiritual techniques and energy clearing methods,
+      I help you create a safe and serene environment.</p>
 
-  <section class="testimonials" id="depoimentos">
+    <p><b>What to Expect:</b></p>
+    <p>Initial consultation to understand your concerns
+      Spiritual assessment of your property
+      Energy cleansing and clearing rituals
+      Guidance on maintaining positive energy</p>
+
+    <p>Book a Session Today and take the first step toward peace of mind!.</p>
+    <a href="#" class="btn">Learn More</a>
+
+  </section>
+
+  <section class="testimonials-section" id="depoimentos">
+    <div class="linha-horizontal"></div>
     <div class="container">
-      <div class="section-header">
-        <h2>Depoimentos</h2>
-        <p class="subtitulo">Conheça as experiências transformadoras de quem já percorreu este caminho sagrado conosco.</p>
-      </div>
-  
-      <div class="testimonial-lista">
-        <div class="testimonial-card">
-          <p class="testimonial-texto">"A experiência xamânica mudou completamente minha perspectiva sobre a vida. Encontrei cura para traumas antigos e desenvolvi uma conexão profunda com minha essência. Hoje me sinto mais centrado e presente em cada momento."</p>
-          <p class="testimonial-autor">— Paulo Andrade</p>
+      <h2>What People Say</h2>
+      <p>Meet the stories of those who have already transformed their lives through this journey.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-effect">
+          <p>"The experience was transformative. I felt a deep connection to myself and my ancestors. Highly
+            recommend!"</p>
+          <span>- Maria S.</span>
         </div>
-  
-        <div class="testimonial-card">
-          <p class="testimonial-texto">"As cerimônias me ajudaram a reconectar com meu propósito de vida. O acolhimento e a sabedoria compartilhada pelos guias espirituais foram fundamentais para meu processo de transformação interior."</p>
-          <p class="testimonial-autor">— Marina Silveira</p>
+        <div class="testimonial-card glass-effect">
+          <p>"I was skeptical at first, but the Kambo ceremony was life-changing. I feel renewed and full of
+            energy."</p>
+          <span>- John D.</span>
+        </div>
+        <div class="testimonial-card glass-effect">
+          <p>"The house cleansing service made my home feel so much lighter and more peaceful. Thank you!"</p>
+          <span>- Emily R.</span>
         </div>
       </div>
     </div>
   </section>
-  
-
-  <section class="contact-section" id="contato">
-    <div class="container contact-container">
-      <div class="contact-info">
-        <h2>Entre em contato</h2>
-        <p>Estamos prontos para acolher você em sua jornada espiritual. Entre em contato conosco para agendar uma consulta ou esclarecer suas dúvidas sobre nossas práticas xamânicas.</p>
-  
-        <div class="contact-details">
-          <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Leblon, Rio de Janeiro - RJ</div>
-          <div class="contact-item"><i class="fas fa-phone-alt"></i> +55 (21) 99999-9999</div>
-          <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:contato@sabedoriaxamanica.com.br">contato@sabedoriaxamanica.com.br</a></div>
+  <section class="form-section" id="contact">
+    <div class="linha-horizontal"></div>
+    <div class="container footer-flex">
+      <div class="container footer-flex">
+        <div class="contact-info">
+          <img src="assets/images/logo2.png" alt="Spa Icon" class="card-icon2">
+          <h2>Contact Us</h2>
+          <p>We are here to assist you on your journey. Feel free to reach out with any questions.</p>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Spiritual Lane, Harmony City</li>
+            <li><i class="fas fa-phone-alt"></i> +1 234 567 890</li>
+            <li><i class="fas fa-envelope"></i> contact@expressionofoneness.com</li>
+          </ul>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
-  
-        <div class="social-links">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <div class="contact-form-container glass-effect">
+          <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Phone Number" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="interest" rows="4" required></textarea>
+            <button type="submit" class="btn">Submit</button>
+          </form>
         </div>
-      </div>
-  
-      <div class="contact-form-container">
-        <form class="contact-form">
-          <label for="name">Nome</label>
-          <input type="text" id="name" placeholder="Seu nome completo" required>
-  
-          <label for="phone">Telefone</label>
-          <input type="tel" id="phone" placeholder="Seu Telefone" required>
-  
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Seu Email" required>
-  
-          <label for="interest">Interesse</label>
-          <select id="interest" required>
-            <option disabled selected>selecione a opção</option>
-            <option>Serimônia com Plantas Sagradas</option>
-            <option>Despertar da Kundalini</option>
-            <option>Temazcal- Cabana do Suor</option>
-            <option>Outro</option>
-          </select>
-  
-          <button type="submit" class="btn-submit">Enviar</button>
-        </form>
       </div>
     </div>
+
   </section>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-coluna">
-        <h3>Centro de Sabedoria Xamânica</h3>
-        <p>Conectamos você com sua essência sagrada através de práticas ancestrais e acolhimento espiritual.</p>
-      </div>
-  
-      <div class="footer-coluna">
-        <h4>Links Rápidos</h4>
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Quem Somos</a></li>
-          <li><a href="#servicos">Práticas</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-coluna">
-        <h4>Contato</h4>
-        <p>Leblon, Rio de Janeiro - RJ</p>
-        <p>+55 (21) 99999-9999</p>
-        <p><a href="mailto:contato@sabedoriaxamanica.com.br">contato@sabedoriaxamanica.com.br</a></p>
-  
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <footer class="footer-section" id="contato">
+    <div class="container footer-container">
+      <img src="assets/images/logo2.png" alt="Logo Expression of Oneness" class="footer-logo">
+
+      <div class="footer-text-content">
+        <h3 class="footer-title">Expression of Oneness</h3>
+        <p class="footer-quote">"A jornada de mil milhas começa com um único passo."</p>
+        <div class="footer-copyright">
+          <p>&copy; 2025 Expression of Oneness. Todos os direitos reservados.</p>
         </div>
       </div>
-    </div>
-  
-    <div class="footer-bottom">
-      <p>&copy; 2025 Centro de Sabedoria Xamânica. Todos os direitos reservados.</p>
+
+      <div class="footer-spacer"></div>
     </div>
   </footer>
   <script>
     const mobileToggle = document.getElementById('mobile-toggle');
     const navLinks = document.getElementById('nav-links');
-    const navItems = document.querySelectorAll('#nav-links a');
-  
-    // Abre ou fecha o menu e alterna o ícone do botão (hamburguer para "X")
+
+    // Função para abrir e fechar o menu
     mobileToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      mobileToggle.classList.toggle('open'); // Muda o ícone para "X"
+      mobileToggle.classList.toggle('open');
     });
-  
-    // Fecha o menu ao clicar em qualquer item de navegação
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
+
+    // Opcional: Fechar o menu ao clicar em um link
+    navLinks.addEventListener('click', () => {
+      if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
-        mobileToggle.classList.remove('open'); // Volta para "☰" quando o menu fecha
-      });
+        mobileToggle.classList.remove('open');
+      }
     });
   </script>
+</body>
 
- </body> 
-  
-  
+</html>
