@@ -847,17 +847,21 @@
 
       /* Seção Hero */
       .hero-section {
-        height: 70vh;
+        height: 100vh;
         /* Diminui a altura para caber melhor na tela */
       }
 
       .hero-box {
-        max-width: 90%;
+        max-width: none;
         /* Caixa de texto ocupa quase toda a largura */
         max-height: none;
         /* Remove a altura máxima para o texto caber */
         padding: 1rem;
         bottom: 5%;
+      }
+
+      .hero-section::after {
+        height: 150px;
       }
 
       .hero-box p {
